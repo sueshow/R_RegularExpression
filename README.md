@@ -12,6 +12,7 @@
 正則表示式（Regular Expression）是在處理純文字資料時，幾乎可以解決所有問題的技術。正則表示式是一種描述文字模式的語言。 它不是單純依照應用歸納出來的工具，背後具有相當的數學基礎。 正則表示式的誕生，來自於美國數學家Stephen Cole Kleene在超過半個世紀之前的研究成果。目前各種程式語言中，幾乎都內建正則表示式，但是他們的語法主要分成兩個派系：
 * 出自於電機電子工程師學會(IEEE)制定的標準
 * 來自於另一個程式語言：Perl
+<>
 正規表示式的常用語法分類如下：
 * 逃脫字元
 
@@ -60,6 +61,17 @@ grep("ab{2,}c", stringVector,value=T)
 grep("bc$", stringVector, value=T)
 grep("\\bde", stringVector, value=T)
 grep("\\Bde", stringVector, value=T)
+```
+```
+stringVector<-c("03-2118800","02-23123456","0988123456",
+                "07-118","0-888","csim@mail.cgu.edu.tw","csim@.","csim@",
+                "http://www.is.cgu.edu.tw/")
+grep("[0-9]{2}-[0-9]{7,8}",stringVector,value=T)
+grep("[a-zA-Z0-9_]+@[a-zA-Z0-9._]+",stringVector,value=T)
+```
+```
+grep("\\d{2}-\\d{7,8}",stringVector,value=T)
+grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
 ```
 <br>
 
