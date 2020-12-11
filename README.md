@@ -40,16 +40,22 @@ library(tidyverse)
 * 特殊符號
   * \d：數字，等於 [0-9]
   * \D：非數字，等於 [^0-9]
-  * [:lower:]：小寫字，等於 [a-z]
-  * [:upper:]：大寫字，等於 [A-Z]
-  * [:alpha:]：所有英文字，等於 [[:lower:][:upper:]] or [A-z]
-  * [:alnum:]：所有英文字和數字，等於 [[:alpha:][:digit:]] or [A-z0-9]
   * \w：文字數字與底線，等於 [[:alnum:]] or [A-z0-9_]
   * \W：非文字數字與底線，等於 [^A-z0-9_]
-  * [:blank:]：空白字元，包括空白和 tab
   * \s：空白字元
-  * \S：非空白字元
+  * \S：非空白字元  
+  * [:lower:]：小寫字，等於 [a-z]
+  * [:upper:]：大寫字，等於 [A-Z]
+  * [:digit:]：所有數字，等於 [0-9]
+  * [:xdigit:]：hex digits
+  * [:alpha:]：所有英文字，等於 [[:lower:][:upper:]] or [A-z]
+  * [:alnum:]：所有英文字和數字，等於 [[:alpha:][:digit:]] or [A-z0-9]
+  * [:space:]：space characters
+  * [:blank:]：空白字元，包括空白和 tab
+  * [:cntrl:]：control characters
   * [:punct:]：標點符號 ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~.
+  * [:graph:]：letters, numbers, and punctuation
+  * [:print:]：letters, numbers, punctuation, and whitespace
 <br>
 
 ## 搜尋字串：GREP套件包
@@ -119,6 +125,6 @@ grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
 * https://molecular-service-science.com/2015/01/18/text-processing-in-r-using-grep/
 * https://datascienceandr.org/articles/RegularExpression.html
 * https://yijutseng.github.io/DataScienceRBook/manipulation.html
-
+* stringer：https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
 * 練習：https://regex101.com/
 
