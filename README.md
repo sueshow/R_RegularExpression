@@ -141,6 +141,8 @@ regexec("Adam", text)
 ```
 <br>
 
+## 範例
+
 
 ## 參考資訊
 * https://molecular-service-science.com/2015/01/18/text-processing-in-r-using-grep/
