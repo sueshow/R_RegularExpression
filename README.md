@@ -171,7 +171,7 @@ regexec("Adam", text)
 
 * ascii：[ -~]
 
-<img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii.JPG" width=800>
+<img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii.JPG" width=400>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii_ex.JPG" width=200>
 <br>
 
