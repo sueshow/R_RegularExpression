@@ -1,11 +1,11 @@
 # R_Text-Mining 
 
 ## 字串處理
-* strsplit()：切割
-* substr()：子集合
-* toupper()/toupper()：大/小寫轉換
-* paste()/paste0()：文字連接
-* str_trim()：前後空白去除 (需安裝stringr)
+* `strsplit()`：切割
+* `substr()`：子集合
+* `toupper()/toupper()`：大/小寫轉換
+* `paste()/paste0()`：文字連接
+* `str_trim()`：前後空白去除 (需安裝stringr)
 ```
 library(tidyverse)
 ```
