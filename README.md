@@ -38,12 +38,13 @@ library(tidyverse)
   * \：要搜尋字串中的特殊字元時，前方須加上\
   * |：或
 * 特殊符號
+  * .：可以用來表達任何字元
   * \d：數字，等於 [0-9]
   * \D：非數字，等於 [^0-9]
   * \w：文字數字與底線，等於 [[:alnum:]] or [A-z0-9_]
   * \W：非文字數字與底線，等於 [^A-z0-9_]
-  * \s：空白字元
-  * \S：非空白字元  
+  * \s：空白字元，等於 [\f\n\r\t\v]
+  * \S：非空白字元，等於 [^\f\n\r\t\v]
   * [:lower:]：小寫字，等於 [a-z]
   * [:upper:]：大寫字，等於 [A-Z]
   * [:digit:]：所有數字，等於 [0-9]
@@ -107,16 +108,20 @@ grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
   * 帶有兩個值，第一個值：符合條件的字串出現在指定範圍當中的位置是從第幾個字元開始。第二個值：「 match.length 」表示的是符合條件的結果有幾個字元
   * regexpr、 gregexpr 及 regexec 似乎都一樣
 ```
+text <- c("Hellow, Adam!", "Hi, Adam!", "How are you, Adam.")
+regexpr("Adam", text) 
 ```
 <br>
 
 * gregexpr(pattern, text, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
 ```
+gregexpr("Adam", text) 
 ```
 <br>
 
 * regexec(pattern, text, ignore.case=FALSE, fixed=FALSE, useBytes=FALSE)
 ```
+regexec("Adam", text)
 ```
 <br>
 
