@@ -142,6 +142,7 @@ regexec("Adam", text)
 <br>
 
 ## 範例
+* username：^[a-z0-9_-]{3,15}$
 
 
 ## 參考資訊
