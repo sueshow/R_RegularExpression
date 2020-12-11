@@ -59,20 +59,20 @@ library(tidyverse)
   * `[:digit:]`：所有數字，等於 `[0-9]`
   * `[:xdigit:]`：hex digits
   * `[:alpha:]`：所有英文字，等於 `[[:lower:][:upper:]]` or `[A-z]`
-  * [:alnum:]：所有英文字和數字，等於 [[:alpha:][:digit:]] or [A-z0-9]
-  * [:space:]：space characters
-  * [:blank:]：空白字元，包括空白和 tab
-  * [:cntrl:]：control characters
-  * [:punct:]：標點符號 ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~.
-  * [:graph:]：letters, numbers, and punctuation
-  * [:print:]：letters, numbers, punctuation, and whitespace
-  * \ooctal：比對八進位，其中octal是八進位數目，如 /\oocetal123/ 可比對 8 進位的 ASCII 中 “123” 所相對應的字元
-  * \xhex：比對十六進位，其中hex是十六進位數目，如 /\xhex38/ 可比對 16 進位的 ASCII 中 “38” 所相對應的字元
+  * `[:alnum:]`：所有英文字和數字，等於 `[[:alpha:][:digit:]]` or `[A-z0-9]`
+  * `[:space:]`：space characters
+  * `[:blank:]`：空白字元，包括空白和 tab
+  * `[:cntrl:]`：control characters
+  * `[:punct:]`：標點符號 ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~.
+  * `[:graph:]`：letters, numbers, and punctuation
+  * `[:print:]`：letters, numbers, punctuation, and whitespace
+  * `\ooctal`：比對八進位，其中octal是八進位數目，如 `/\oocetal123/` 可比對 8 進位的 ASCII 中 “123” 所相對應的字元
+  * `\xhex`：比對十六進位，其中hex是十六進位數目，如 `/\xhex38/` 可比對 16 進位的 ASCII 中 “38” 所相對應的字元
 * 小技巧
-  * 善用 ^ 標示起始位置
-  * 善用 \b 偵測字元邊界
-  * 善用 .*? 忽略後續字串
-  * (x)：比對 x 並將符合的部分存入一個變數 
+  * 善用 `^` 標示起始位置
+  * 善用 `\b` 偵測字元邊界
+  * 善用 `.*?` 忽略後續字串
+  * `(x)`：比對 x 並將符合的部分存入一個變數 
 <br>
 
 ## 搜尋字串：GREP套件包
@@ -142,14 +142,14 @@ regexec("Adam", text)
 <br>
 
 ## 常用範例
-* username：^[a-z0-9_-]{3,15}$
+* username：`^[a-z0-9_-]{3,15}$`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/username.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/username_ex.JPG" width=200>
 <br>
 
 
-* phone number：^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
+* phone number：`^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber_ex.JPG" width=200>
@@ -157,8 +157,8 @@ regexec("Adam", text)
 
 
 * email：
-  * [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
-  * /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
+  * `[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+`
+  * `/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email_ex.JPG" width=200>
@@ -167,41 +167,41 @@ regexec("Adam", text)
 
 * date：
   * MM/DD/YYYY
-    * (?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})
-    * /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/ 
-  * YYYY/MM/DD：/^(((?:19|20)[0-9]{2})[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$/
+    * `(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})`
+    * `/^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/`
+  * YYYY/MM/DD：`/^(((?:19|20)[0-9]{2})[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$/`
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/date_ex.JPG" width=200>
   
 <br>
 
 
-* ascii：[ -~]
+* ascii：`[ -~]`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii.JPG" width=400>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii_ex.JPG" width=200>
 <br>
 
 
-* password：^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
+* password：`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/password.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/password_ex.JPG" width=200>
 <br>
 
 
-* ipv4：(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
+* ipv4：`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4_ex.JPG" width=200>
 <br>
 
 
-* ipv6：(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+* ipv6：`(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv6_ex.JPG" width=200>
 <br>
 
 
-* ssn：^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$
+* ssn：`^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$`
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ssn.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ssn_ex.JPG" width=200>
@@ -209,25 +209,25 @@ regexec("Adam", text)
 
 
 * MAC_IEEE 802：MAC-48 標準格式`_6`組由 `:` 或 `-` 做區隔的雙位數 16 進制數字
-  * /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/
+  * `/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/`
 <br>  
 
 * 驗證使用者帳號，第一個字不為數字，只接受大小寫字母、數字及底線
-  * /^[a-zA-Z]\w*$/
+  * `/^[a-zA-Z]\w*$/`
 <br>  
 
 * 高強度密碼：6 位數以上，且至少包含大寫字母、小寫字母、數字、符號各一。若需要調整，將其對應的小括號內容拿掉即可
-  * /^(?=.*[^a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/
+  * `/^(?=.*[^a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/`
 <br>  
 
 * URL網址：允許 http, https, ftp 協定，且可取出 Protocol, Domain, Path, Query
   * `/^(?:(https?|ftp):\/\/)?((?:[a-zA-Z0-9.\-]+\.)+(?:[a-zA-Z0-9]{2,4}))((?:/[\w+=%&.~\-]*)*)\??([\w+=%&.~\-]*)$/`
 <br>  
 
-* 中文 (Unicode)：[\u4e00-\u9fa5]
-* 正整數：/^\+?\d+$/
-* 整數：/^[+-]?\d+$/
-* float：/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/
+* 中文 (Unicode)：`[\u4e00-\u9fa5]`
+* 正整數：`/^\+?\d+$/`
+* 整數：`/^[+-]?\d+$/`
+* float：`/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/`
 <br>  
 
 
