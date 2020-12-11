@@ -156,16 +156,21 @@ regexec("Adam", text)
 <br>
 
 
-* email：[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
+* email：
+  * [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
+  * /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
 
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email_ex.JPG" width=200>
 <br>
 
 
-* date：(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})
-
+* date：
+  * MM/DD/YYYY
+    * (?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})
+    * /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/date_ex.JPG" width=200>
+  * YYYY/MM/DD：/^(((?:19|20)[0-9]{2})[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$/
 <br>
 
 
@@ -184,7 +189,6 @@ regexec("Adam", text)
 
 
 * ipv4：(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
-
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4_ex.JPG" width=200>
 <br>
@@ -201,6 +205,24 @@ regexec("Adam", text)
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ssn.JPG" width=800>
 <img src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ssn_ex.JPG" width=200>
 <br>
+
+
+* MAC_IEEE 802：MAC-48 標準格式`_6`組由 `:` 或 `-` 做區隔的雙位數 16 進制數字
+  * /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/
+<br>  
+
+* 驗證使用者帳號，第一個字不為數字，只接受大小寫字母、數字及底線
+  * /^[a-zA-Z]\w*$/
+<br>  
+
+* 密碼_高強度密碼：6 位數以上，且至少包含大寫字母、小寫字母、數字、符號各一。若需要調整，將其對應的小括號內容拿掉即可
+  * /^(?=.*[^a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/
+<br>  
+
+* URL 網址：允許 http, https, ftp 協定，且可取出 Protocol, Domain, Path, Query
+  * /^(?:(https?|ftp):\/\/)?((?:[a-zA-Z0-9.\-]+\.)+(?:[a-zA-Z0-9]{2,4}))((?:/[\w+=%&.~\-]*)*)\??([\w+=%&.~\-]*)$/
+<br>  
+
 
 
 ## 參考資訊
