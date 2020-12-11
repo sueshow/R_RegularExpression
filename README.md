@@ -39,12 +39,21 @@ library(tidyverse)
   * |：或
 * 特殊符號
   * .：可以用來表達任何字元
-  * \d：數字，等於 [0-9]
-  * \D：非數字，等於 [^0-9]
+  * \d：比對任一個數字，等於 [0-9]
+  * \D：比對任一個非數字，等於 [^0-9]
   * \w：文字數字與底線，等於 [[:alnum:]] or [A-z0-9_]
   * \W：非文字數字與底線，等於 [^A-z0-9_]
-  * \s：空白字元，等於 [\f\n\r\t\v]
-  * \S：非空白字元，等於 [^\f\n\r\t\v]
+  * \s：空白字元，等於 [\f\n\r\t\v]，如 /\s\w*/ 可比對 “A b” 中的 “b”
+  * \S：非空白字元，等於 [^\f\n\r\t\v]，如 /\S/\w* 可比對 “A b” 中的 “A”
+  * \b：比對英文字的邊界，如 /\bn\w/ 可以比對 “noonday” 中的 “no”； /\wy\b/ 可比對 “possibly yesterday.” 中的 “ly”
+  * \B：比對非「英文字的邊界」，如 /\w\Bn/ 可以比對 “noonday” 中的 “on”； /y\B\w/ 可以比對 “possibly yesterday.” 中的 “ye”
+  * [\b]：比對退位字元 (Backspace character)，如：比對一個 backspace
+  * \cX：比對控制字元 (Control character)，其中 X 是控制字元，如 /\cM/ 可以比對一個字串中的 control-M
+  * \f：比對 form-feed
+  * \n：比對換行符號
+  * \r：比對 carriage return
+  * \t：比對定位字元 (Tab)
+  * \v：比對垂直定位字元（Vertical tab）
   * [:lower:]：小寫字，等於 [a-z]
   * [:upper:]：大寫字，等於 [A-Z]
   * [:digit:]：所有數字，等於 [0-9]
@@ -57,6 +66,13 @@ library(tidyverse)
   * [:punct:]：標點符號 ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~.
   * [:graph:]：letters, numbers, and punctuation
   * [:print:]：letters, numbers, punctuation, and whitespace
+  * \ooctal：比對八進位，其中octal是八進位數目，如 /\oocetal123/ 可比對 8 進位的 ASCII 中 “123” 所相對應的字元
+  * \xhex：比對十六進位，其中hex是十六進位數目，如 /\xhex38/ 可比對 16 進位的 ASCII 中 “38” 所相對應的字元
+* 小技巧
+  * 善用 ^ 標示起始位置
+  * 善用 \b 偵測字元邊界
+  * 善用 .*? 忽略後續字串
+  * (x)：比對 x 並將符合的部分存入一個變數 
 <br>
 
 ## 搜尋字串：GREP套件包
@@ -130,6 +146,7 @@ regexec("Adam", text)
 * https://molecular-service-science.com/2015/01/18/text-processing-in-r-using-grep/
 * https://datascienceandr.org/articles/RegularExpression.html
 * https://yijutseng.github.io/DataScienceRBook/manipulation.html
+* https://blog.poychang.net/note-regular-expression/
 * stringer：https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
 * 練習/測試：https://regex101.com/
 * 常用的正規表示式：https://ihateregex.io/
