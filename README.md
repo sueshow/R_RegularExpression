@@ -144,47 +144,47 @@ regexec("Adam", text)
 ## 常用範例
 * username：^[a-z0-9_-]{3,15}$
 
-![username](https://github.com/sueshow/R_Text-Mining/blob/main/picture/username.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/username.JPG" width=800>
 
-![username_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/username_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/username_ex.JPG" width=200>
 <br>
 
 
 * phone number：^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
 
-![phone number](https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber.JPG" width=800>
 
-![phone number_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber_ex.JPG" width=200>
 <br>
 
 
 * email：[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
 
-![email](https://github.com/sueshow/R_Text-Mining/blob/main/picture/email.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email.JPG" width=800>
 
-![email_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/email_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/email_ex.JPG" width=200>
 <br>
 
 
 * date：(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})
 
-![date_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/date_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/date_ex.JPG" width=200>
 <br>
 
 
 * ascii：[ -~]
 
-![ascii](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii.JPG" width=800>
 
-![ascii_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii_ex.JPG" width=200>
 <br>
 
 
 * password：^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
 
-![password](https://github.com/sueshow/R_Text-Mining/blob/main/picture/password.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/password.JPG" width=800>
 
-![password_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/password_ex.JPG)
+<img align="left" src="https://github.com/sueshow/R_Text-Mining/blob/main/picture/password_ex.JPG" width=200>
 <br>
 
 
