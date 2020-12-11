@@ -131,5 +131,7 @@ regexec("Adam", text)
 * https://datascienceandr.org/articles/RegularExpression.html
 * https://yijutseng.github.io/DataScienceRBook/manipulation.html
 * stringer：https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
-* 練習：https://regex101.com/
+* 練習/測試：https://regex101.com/
+* 常用的正規表示式：https://ihateregex.io/
+* 視覺化呈現正規表示式的規則路徑：https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24
 
