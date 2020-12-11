@@ -149,12 +149,14 @@ regexec("Adam", text)
 ![username_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/username_ex.JPG)
 <br>
 
+
 * phone number：^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
 
 ![phone number](https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber.JPG)
 
 ![phone number_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/phonenumber_ex.JPG)
 <br>
+
 
 * email：[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
 
@@ -163,10 +165,12 @@ regexec("Adam", text)
 ![email_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/email_ex.JPG)
 <br>
 
+
 * date：(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})
 
 ![date_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/date_ex.JPG)
 <br>
+
 
 * ascii：[ -~]
 
@@ -175,11 +179,34 @@ regexec("Adam", text)
 ![ascii_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ascii_ex.JPG)
 <br>
 
+
 * password：^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
 
 ![password](https://github.com/sueshow/R_Text-Mining/blob/main/picture/password.JPG)
 
 ![password_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/password_ex.JPG)
+<br>
+
+
+* ipv4：(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
+
+![ipv4](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4.JPG)
+
+![ipv4_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4_ex.JPG)
+<br>
+
+
+* ipv6：(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+
+![ipv6_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv6_ex.JPG)
+<br>
+
+
+* ssn：^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$
+
+![ssn](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4.JPG)
+
+![ssn_ex](https://github.com/sueshow/R_Text-Mining/blob/main/picture/ipv4_ex.JPG)
 <br>
 
 
