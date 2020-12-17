@@ -137,6 +137,7 @@ gsub(pattern = "\\s",
 > some text on line one; \nand then some text on line two <br> 
 > sometextonlineone;andthensometextonlinetwo <br> 
 ```
+# 完全去除
 trim <- function (x){
   gsub("^\\s+|\\s+$", "", x)
   }
