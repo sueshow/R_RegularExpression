@@ -116,8 +116,34 @@ grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
 
 * gsub(pattern, replacement, x, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
   * 文字取代
+  * 範例：消除空白
 ```
+string <- '    some text on line one; 
+and then some text on line two     '
+
+# R 3.2.0之前
+gsub(pattern = "(^ +| +$)",
+     replacement = "",
+     x = string)
+    
+# R 3.2.0及更高 
+trimws(x = string)
+
+# 所有空白
+gsub(pattern = "\\s",   
+     replacement = "",
+     x = string)
 ```
+> some text on line one; \nand then some text on line two <br> 
+> sometextonlineone;andthensometextonlinetwo <br> 
+```
+trim <- function (x){
+  gsub("^\\s+|\\s+$", "", x)
+  }
+
+trim("   test  ") 
+```
+> test <>
 <br>
 
 * regexpr(pattern, text, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
@@ -230,27 +256,7 @@ regexec("Adam", text)
 * float：`/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/`
 <br>  
 
-## 範例
-* 消除空白
-```
-string <- '    some text on line one; 
-and then some text on line two     '
 
-# R 3.2.0之前
-gsub(pattern = "(^ +| +$)",
-     replacement = "",
-     x = string)
-    
-# R 3.2.0及更高 
-trimws(x = string)
-
-# 所有空白
-gsub(pattern = "\\s",   
-     replacement = "",
-     x = string)
-```
-> some text on line one; \nand then some text on line two <br> 
-> sometextonlineone;andthensometextonlinetwo
 
 
 ## 參考資訊
