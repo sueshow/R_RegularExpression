@@ -83,11 +83,17 @@ stringVector <- c("a", "abc", "ac", "abbc", "abbbc", "abbbbc")
 grep("ab?c", stringVector,value=T)
 grep("ab{2,}c", stringVector,value=T)
 ```
+> "abc" "ac"  <br>
+> "abbc"   "abbbc"  "abbbbc"<br>
 ```
 grep("bc$", stringVector, value=T)
 grep("\\bde", stringVector, value=T)
 grep("\\Bde", stringVector, value=T)
 ```
+> "abc"    "abbc"   "abbbc"  "abbbbc"  <br>
+> character(0) <br>
+> character(0) <br>
+<br>
 ```
 stringVector<-c("03-2118800","02-23123456","0988123456",
                 "07-118","0-888","csim@mail.cgu.edu.tw","csim@.","csim@",
@@ -95,10 +101,14 @@ stringVector<-c("03-2118800","02-23123456","0988123456",
 grep("[0-9]{2}-[0-9]{7,8}",stringVector,value=T)
 grep("[a-zA-Z0-9_]+@[a-zA-Z0-9._]+",stringVector,value=T)
 ```
+> "03-2118800"  "02-23123456" <br>
+> "csim@mail.cgu.edu.tw" "csim@." <br>
 ```
 grep("\\d{2}-\\d{7,8}",stringVector,value=T)
 grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
 ```
+> "03-2118800"  "02-23123456" <br>
+> "csim@mail.cgu.edu.tw" "csim@." <>
 <br>
 
 * grepl(pattern, x, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
@@ -111,13 +121,17 @@ grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
   * 多個指定 replacement ，用來取代字元的函數
   * sub 及 gsub 作用相同
 ```
+sub("_","","123_456_789")         # 替換第一個出現的_ 為無空白
 ```
+> "123456_789" <br>
 <br>
 
 * gsub(pattern, replacement, x, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
   * 文字取代
   * 範例：消除空白
 ```
+gsub("_","","123_456_789")        # 替換所有出現的_ 為無空白
+
 string <- '    some text on line one; 
 and then some text on line two     '
 
@@ -134,6 +148,7 @@ gsub(pattern = "\\s",
      replacement = "",
      x = string)
 ```
+> "123456789" <br>
 > some text on line one; \nand then some text on line two <br> 
 > sometextonlineone;andthensometextonlinetwo <br> 
 ```
@@ -144,7 +159,7 @@ trim <- function (x){
 
 trim("   test  ") 
 ```
-> test <>
+> test <br>
 <br>
 
 * regexpr(pattern, text, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
@@ -154,12 +169,46 @@ trim("   test  ")
 text <- c("Hellow, Adam!", "Hi, Adam!", "How are you, Adam.")
 regexpr("Adam", text) 
 ```
+> [1]  9  5 14  <br>
+> attr(,"match.length") <br>
+> [1] 4 4 4   <br>
+> attr(,"index.type")  <br>
+> [1] "chars"  <br>
+> attr(,"useBytes")  <br>
+> [1] TRUE <br>
 <br>
 
 * gregexpr(pattern, text, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
 ```
+text <- c("Hellow, Adam!", "Hi, Adam!", "How are you, Adam.")
 gregexpr("Adam", text) 
 ```
+> [[1]]                 <br>
+> [1] 9                 <br>
+> attr(,"match.length") <br>
+> [1] 4                 <br>
+> attr(,"index.type")   <br>
+> [1] "chars"           <br>
+> attr(,"useBytes")     <br>
+> [1] TRUE              <br>
+> <br>
+> [[2]]                 <br>
+> [1] 5                 <br>
+> attr(,"match.length") <br>
+> [1] 4                 <br>
+> attr(,"index.type")   <br>
+> [1] "chars"           <br>
+> attr(,"useBytes")     <br>
+> [1] TRUE              <br>
+> <br>
+> [[3]]                 <br>
+> [1] 14                <br>
+> attr(,"match.length") <br>
+> [1] 4                 <br>
+> attr(,"index.type")   <br>
+> [1] "chars"           <br>
+> attr(,"useBytes")     <br>
+> [1] TRUE              <br>
 <br>
 
 * regexec(pattern, text, ignore.case=FALSE, fixed=FALSE, useBytes=FALSE)
