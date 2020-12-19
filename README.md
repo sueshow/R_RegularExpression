@@ -8,7 +8,9 @@
 * `str_trim()`：前後空白去除 (需安裝stringr)
 ```
 library(tidyverse)
+str_trim("  Hello   ")
 ```
+> [1] "Hello" <>
 <br>
 
 ## Regular Expression
@@ -113,7 +115,16 @@ grep("\\w+@[a-zA-Z0-9._]+",stringVector,value=T)
 * grepl(pattern, x, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
   * 回傳每個向量是否符合條件(TRUE or FALSE)
 ```
+plant = c("apple","berry","grape")
+grep('e',plant) 
+table(grepl('e',plant))
+table(grepl('p',plant))
 ```
+> [1] 1 2 3    <br>
+> TRUE         <br> 
+>   3          <br>
+> FALSE  TRUE  <br>
+>    1      2  <br>
 <br>
 
 * sub(pattern, replacement, x, ignore.case=FALSE, perl=FALSE, fixed=FALSE, useBytes=FALSE)
