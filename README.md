@@ -93,7 +93,6 @@ grep("\\Bde", stringVector, value=T)
 > "abc"    "abbc"   "abbbc"  "abbbbc"  <br>
 > character(0) <br>
 > character(0) <br>
-<br>
 ```
 stringVector<-c("03-2118800","02-23123456","0988123456",
                 "07-118","0-888","csim@mail.cgu.edu.tw","csim@.","csim@",
