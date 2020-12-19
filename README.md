@@ -130,7 +130,8 @@ sub("_","","123_456_789")         # 替換第一個出現的_ 為無空白
   * 範例：消除空白
 ```
 gsub("_","","123_456_789")        # 替換所有出現的_ 為無空白
-
+```
+```
 string <- '    some text on line one; 
 and then some text on line two     '
 
