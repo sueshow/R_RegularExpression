@@ -1,9 +1,9 @@
 # R_Text-Mining 
 
 ## 字串處理
-<table border="1" width="40%">
+<table border="1" width="20%">
     <tr>
-        <th width="30%">Code 語法</a>
+        <th width="10%">Code 語法</a>
         <th width="10%">Description 說明</a>
     </tr>
     <tr>
