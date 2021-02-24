@@ -509,7 +509,7 @@ regexec("Adam", text)
 * https://blog.poychang.net/note-regular-expression/
 * stringer：https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
 * stringer：http://blog.fens.me/r-stringr/
-* 練習/測試：https://regex101.com/
+* [Regular Expession 101](https://regex101.com/)
 * 常用的正規表示式：https://ihateregex.io/
 * 視覺化呈現正規表示式的規則路徑：https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24
 * 參考範例：https://github.com/YenLinWu/Coding_Notes/tree/main/Regular%20Expression
