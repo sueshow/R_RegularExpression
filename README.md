@@ -43,29 +43,29 @@ str_trim("  Hello   ")
 <br>
 
 正規表示式的常用語法分類如下：
-<table border="1" width="50%">
+<table border="1" width="40%">
     <tr>
-        <th width="10%">Type 類型</a>
-        <th width="10%">Meta Character 元字符</a>
+        <th width="5%">Type 類型</a>
+        <th width="5%">Meta Character 元字符</a>
         <th width="30%">Description 說明</a>
     </tr>
     <tr>
         <td> 逃脫字元 </td>
         <td> \ </td>
-        <td></td>
+        <td> 表示鄰接字符應視為字符 </td>
     </tr>
     <tr>
         <td rowspan="6"> 表示數量 </td>
         <td> * </td> 
-        <td> 出現 0~ 無限多次，等於{0,} </td>
+        <td> 在 * 之前的字符出現 0~ 無限多次，等於{0,} </td>
     </tr>
     <tr>
         <td> + </td>
-        <td> 出現 1~ 無限多次，等於{1,} </td>
+        <td> 在 + 之前的字符出現 1~ 無限多次，等於{1,} </td>
     </tr>
     <tr>
         <td> ? </td>
-        <td> 出現 0~1 次，等於{0,1} </td>
+        <td> 在 ? 之前的字符出現 0~1 次，等於{0,1} </td>
     </tr>
     <tr>
         <td> {n} </td>
@@ -82,11 +82,11 @@ str_trim("  Hello   ")
     <tr>
         <td rowspan="4"> 表示位置 </td>
         <td> ^ </td> 
-        <td> 出現在字串開始的位置，`^`也匹配 `\n` 或 `\r` 之後的位置 </td>
+        <td> 與 ^ 鄰接字符出現在字串開始的位置，`^`也匹配 `\n` 或 `\r` 之後的位置 </td>
     </tr>
     <tr>
         <td> $ </td>
-        <td> 出現在字串結束的位置，`$`也匹配 `\n` 或 `\r` 之前的位置 </td>
+        <td> 與 $ 鄰接字符出現在字串結束的位置，`$`也匹配 `\n` 或 `\r` 之前的位置 </td>
     </tr>
     <tr>
         <td> \b </td>
@@ -120,7 +120,7 @@ str_trim("  Hello   ")
     <tr>
         <td rowspan="30"> 特殊符號 </td>
         <td> . </td> 
-        <td> 可以用來表達任何字元 </td>
+        <td> 可以用來表達任何字元(字母、數字或符號，但不包含換行符號) </td>
     </tr>
     <tr>
         <td> \d </td>
