@@ -168,11 +168,15 @@ str_trim("  Hello   ")
     </tr>
     <tr>
         <td> \n </td>
-        <td> 比對換行符號，等於 `\x0a` 和 `\cJ` </td>
+        <td> 比對換行符號，等於 `\x0a` 和 `\cJ`<br>
+             LF是line feed的意思，也就是\n
+        </td>
     </tr>
     <tr>
         <td> \r </td>
-        <td> 比對回車符 (carriage return)，等於 `\x0d` 和 `\cM` </td>
+        <td> 比對回車符 (carriage return)，等於 `\x0d` 和 `\cM`<br>
+             CR是carriage return的意思，也就是\r 
+        </td>
     </tr>
     <tr>
         <td> \t </td>
