@@ -180,7 +180,7 @@ str_trim("  Hello   ")
     </tr>
     <tr>
         <td> \t </td>
-        <td> 比對定位字元 (Tab)，等於 `\x09` 和 `\cI` </td>
+        <td> 比對水平定位字元 (Tab)，等於 `\x09` 和 `\cI` </td>
     </tr>
     <tr>
         <td> \v </td>
