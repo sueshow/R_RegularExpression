@@ -7,23 +7,23 @@
         <th width="5%">Description 說明</a>
     </tr>
     <tr>
-        <td> strsplit() </td>
+        <td> <code> strsplit() </code> </td>
         <td> 切割 </td>
     </tr>
     <tr>
-        <td> substr() </td>
+        <td> <code> substr() </code> </td>
         <td> 子集合 </td>
     </tr>
     <tr>
-        <td> toupper()/toupper() </td>
+        <td> <code> toupper()/toupper() </code> </td>
         <td> 大/小寫轉換 </td>
     </tr>
     <tr>
-        <td> paste()/paste0() </td>
+        <td> <code> paste()/paste0() </code> </td>
         <td> 文字連接 </td>
     </tr>
     <tr>
-        <td> str_trim() </td>
+        <td> <code> str_trim() </code> </td>
         <td> 前後空白去除 (需安裝stringr) </td>
     </tr>
 </table>
@@ -51,209 +51,209 @@ str_trim("  Hello   ")
     </tr>
     <tr>
         <td> 逃脫字元 </td>
-        <td> \ </td>
+        <td> <code> \ </code> </td>
         <td> 表示鄰接字符應視為字符 </td>
     </tr>
     <tr>
         <td rowspan="6"> 表示數量 </td>
-        <td> * </td> 
+        <td> <code> * </code> </td> 
         <td> 在 * 之前的字符出現 0~ 無限多次，等於{0,} </td>
     </tr>
     <tr>
-        <td> + </td>
+        <td> <code> + </code> </td>
         <td> 在 + 之前的字符出現 1~ 無限多次，等於{1,} </td>
     </tr>
     <tr>
-        <td> ? </td>
+        <td> <code> ? </code> </td>
         <td> 在 ? 之前的字符出現 0~1 次，等於{0,1} </td>
     </tr>
     <tr>
-        <td> {n} </td>
+        <td> <code> {n} </code> </td>
         <td> 出現 n 次 </td>
     </tr>
     <tr>
-        <td> {n,} </td>
+        <td> <code> {n,} </code> </td>
         <td> 出現 n~無限多次，o{1,}等於o+，o{0,}等於o* </td>
     </tr>
     <tr>
-        <td> {n,m} </td>
+        <td> <code> {n,m} </code></td>
         <td> 出現 n~m 次 </td>
     </tr>
     <tr>
         <td rowspan="4"> 表示位置 </td>
-        <td> ^ </td> 
+        <td> <code> ^ </code> </td> 
         <td> 與 ^ 鄰接字符出現在字串開始的位置，`^`也匹配 `\n` 或 `\r` 之後的位置 </td>
     </tr>
     <tr>
-        <td> $ </td>
+        <td> <code> $ </code> </td>
         <td> 與 $ 鄰接字符出現在字串結束的位置，`$`也匹配 `\n` 或 `\r` 之前的位置 </td>
     </tr>
     <tr>
-        <td> \b </td>
+        <td> <code> \b </code> </td>
         <td> 出現空字串 (空白) 開始或結束的位置 </td>
     </tr>
     <tr>
-        <td> \B </td>
+        <td> <code> \B </code> </td>
         <td> 出現非字串開始或結束的位置 </td>
     </tr>
     <tr>
         <td rowspan="5"> 運算子 </td>
-        <td> . </td> 
+        <td> <code> . </code> </td> 
         <td> 出現所有的字元一次，包括空字串 </td>
     </tr>
     <tr>
-        <td> [...] </td>
+        <td> <code> [...] </code> </td>
         <td> 出現字元清單 (…) 中的字元一次，可用-表示範圍，如`[A-Z]`，`[a-z]`，`[0-9]` </td>
     </tr>
     <tr>
-        <td> [^...] </td>
+        <td> <code> [^...] </code> </td>
         <td> 不出現字元清單 (…) 中的字元 </td>
     </tr>
     <tr>
-        <td> \ </td>
+        <td> <code> \ </code> </td>
         <td> 要搜尋字串中的特殊字元時，前方須加上 `\` </td>
     </tr>
     <tr>
-        <td> | </td>
+        <td> <code> | </code> </td>
         <td> 或 </td>
     </tr>
     <tr>
         <td rowspan="30"> 特殊符號 </td>
-        <td> . </td> 
+        <td> <code> . </code> </td> 
         <td> 可以用來表達任何字元(字母、數字或符號，但不包含換行符號) </td>
     </tr>
     <tr>
-        <td> \d </td>
+        <td> <code> \d </code> </td>
         <td> 比對任一個數字，等於 `[0-9]` </td>
     </tr>
     <tr>
-        <td> \D </td>
+        <td> <code> \D </code> </td>
         <td> 比對任一個非數字，等於 `[^0-9]` </td>
     </tr>
     <tr>
-        <td> \w </td>
+        <td> <code> \w </code> </td>
         <td> 文字數字與底線，等於 `[[:alnum:]]` or `[A-z0-9_]` </td>
     </tr>
     <tr>
-        <td> \W </td>
+        <td> <code> \W </code> </td>
         <td> 非文字數字與底線，等於 [^A-z0-9_] </td>
     </tr>
     <tr>
-        <td> \s </td>
+        <td> <code> \s </code> </td>
         <td> 空白字元，包括空格、定位字元、換頁符等，等於 `[\f\n\r\t\v]`，如 `/\s\w*/` 可比對 “A b” 中的 “b” </td>
     </tr>
     <tr>
-        <td> \S </td>
+        <td> <code> \S </code> </td>
         <td> 非空白字元，等於 `[^\f\n\r\t\v]`，如 `/\S/\w*` 可比對 “A b” 中的 “A” </td>
     </tr>
     <tr>
-        <td> \b </td>
+        <td> <code> \b </code> </td>
         <td> 比對英文字的邊界，如 `/\bn\w/` 可以比對 “noonday” 中的 “no”； `/\wy\b/` 可比對 “possibly yesterday.” 中的 “ly” </td>
     </tr>
     <tr>
-        <td> \B </td>
+        <td> <code> \B </code> </td>
         <td> 比對非「英文字的邊界」，如 `/\w\Bn/` 可以比對 “noonday” 中的 “on”； `/y\B\w/` 可以比對 “possibly yesterday.” 中的 “ye” </td>
     </tr>
     <tr>
-        <td> [\b] </td>
+        <td> <code> [\b] </code> </td>
         <td> 比對退位字元 (Backspace character)，如：比對一個 backspace </td>
     </tr>
     <tr>
-        <td> \cX </td>
+        <td> <code> \cX </code> </td>
         <td> 比對控制字元 (Control character)，其中 X 是控制字元，如 `/\cM/` 可以比對一個字串中的 control-M </td>
     </tr>
     <tr>
-        <td> \f </td>
+        <td> <code> \f </code> </td>
         <td> 比對換頁符 (form-feed)，等於 `\x0c` 和 `\cL` </td>
     </tr>
     <tr>
-        <td> \n </td>
+        <td> <code> \n </code> </td>
         <td> 比對換行符號，等於 `\x0a` 和 `\cJ`<br>
              LF是line feed的意思，也就是\n in windows
         </td>
     </tr>
     <tr>
-        <td> \r </td>
+        <td> <code> \r </code> </td>
         <td> 比對回車符 (carriage return)，等於 `\x0d` 和 `\cM`<br>
              CR是carriage return的意思，也就是\r in windows
         </td>
     </tr>
     <tr>
-        <td> \t </td>
+        <td> <code> \t </code> </td>
         <td> 比對水平定位字元 (Tab)，等於 `\x09` 和 `\cI` </td>
     </tr>
     <tr>
-        <td> \v </td>
+        <td> <code> \v </code> </td>
         <td> 比對垂直定位字元 (Vertical tab)，等於 `\x0b` 和 `\cK` </td>
     </tr>
     <tr>
-        <td> [:lower:] </td>
+        <td> <code> [:lower:] </code> </td>
         <td> 小寫字，等於 `[a-z]` </td>
     </tr>
     <tr>
-        <td> [:upper:] </td>
+        <td> <code> [:upper:] </code> </td>
         <td> 大寫字，等於 `[A-Z]` </td>
     </tr>
     <tr>
-        <td> [:digit:] </td>
+        <td> <code> [:digit:] </code> </td>
         <td> 所有數字，等於 `[0-9]` </td>
     </tr>
     <tr>
-        <td> [:xdigit:] </td>
+        <td> <code> [:xdigit:] </code> </td>
         <td> hex digits </td>
     </tr>
     <tr>
-        <td> [:alpha:] </td>
+        <td> <code> [:alpha:] </code> </td>
         <td> 所有英文字，等於 `[[:lower:][:upper:]]` or `[A-z]` </td>
     </tr>
     <tr>
-        <td> [:alnum:] </td>
+        <td> <code> [:alnum:] </code></td>
         <td> 所有英文字和數字，等於 `[[:alpha:][:digit:]]` or `[A-z0-9]` </td>
     </tr>
     <tr>
-        <td> [:space:] </td>
+        <td> <code> [:space:] </code> </td>
         <td> space characters </td>
     </tr>
     <tr>
-        <td> [:blank:] </td>
+        <td> <code> [:blank:] </code> </td>
         <td> 空白字元，包括空白和 tab </td>
     </tr>
     <tr>
-        <td> [:cntrl:] </td>
+        <td> <code> [:cntrl:] </code> </td>
         <td> control characters </td>
     </tr>
     <tr>
-        <td> [:punct:] </td>
+        <td> <code> [:punct:] </code> </td>
         <td> 標點符號 ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~. </td>
     </tr>
     <tr>
-        <td> [:graph:] </td>
+        <td> <code> [:graph:] </code> </td>
         <td> letters, numbers, and punctuation </td>
     </tr>
     <tr>
-        <td> [:print:] </td>
+        <td> <code> [:print:] </code> </td>
         <td> letters, numbers, punctuation, and whitespace </td>
     </tr>
     <tr>
-        <td> \ooctal </td>
+        <td> <code> \ooctal </code> </td>
         <td> 比對八進位，其中octal是八進位數目，如 `/\oocetal123/` 可比對 8 進位的 ASCII 中 “123” 所相對應的字元 </td>
     </tr>
     <tr>
-        <td> \xhex </td>
+        <td> <code> \xhex </code> </td>
         <td> 比對十六進位，其中hex是十六進位數目，如 `/\xhex38/` 可比對 16 進位的 ASCII 中 “38” 所相對應的字元 </td>
     </tr>
     <tr>
         <td rowspan="4"> 小技巧 </td>
         <td> </td> 
-        <td> 善用 `^` 標示起始位置 </td>
+        <td> 善用 <code> ^ </code> 標示起始位置 </td>
     </tr>
     <tr>
         <td> </td>
-        <td> 善用 `\b` 偵測字元邊界 </td>
+        <td> 善用 <code> \b </code> 偵測字元邊界 </td>
     </tr>
     <tr>
         <td> </td>
-        <td> 善用 `.*?` 忽略後續字串 </td>
+        <td> 善用 <code> .*? </code> 忽略後續字串 </td>
     </tr>
     <tr>
         <td> (x) </td>
