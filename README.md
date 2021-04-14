@@ -256,8 +256,8 @@ str_trim("  Hello   ")
         <td> 善用 <code> .*? </code> 忽略後續字串 </td>
     </tr>
     <tr>
-        <td> (x) </td>
-        <td> 比對 x 並將符合的部分存入一個變數 </td>
+        <td> <code> (x) </code> </td>
+        <td> 比對 <code> x </code> 並將符合的部分存入一個變數 </td>
     </tr>
 </table>
 <br>
